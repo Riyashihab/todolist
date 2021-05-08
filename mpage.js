@@ -19,7 +19,6 @@ function ajax(){
     xhttp.send();
 }
 
-
  function GenerateTable(items){
     const todotable = document.getElementById("table0")
  items.forEach(addtble);
@@ -55,7 +54,58 @@ function ajax(){
       todotable.appendChild(row);
     }
     
-   
+   //ccheckcount
   
 }
+
+
+//function validation(){
+
+  var myprmise=new Promise(function (resolve, reject){
+
  
+  var count=0
+ 
+  $(document).on("change", "input[type=checkbox]", function (event) {
+    var pick = event.target;
+    //alert(pick.checked);
+    if (pick.checked==true) {
+      
+    
+      count++;
+      //alert(count);
+
+      if(count==5){
+        resolve("hii");
+      }
+      else{
+        reject
+      }
+    }
+    else{
+count--;
+    }
+   
+
+  });
+ 
+
+});
+
+
+myprmise
+.then(function(s){
+  alert("Congrats..5 task completed successfully");
+
+})
+
+.catch(function (e) {
+  
+})
+//}
+
+
+
+
+
+
